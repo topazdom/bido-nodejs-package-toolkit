@@ -1,0 +1,95 @@
+{
+  "name": "bido-nodejs-package-toolkit",
+  "version": "1.0.0",
+  "description": "Bido NodeJS Package Toolkit is NodeJS Package Development Starter Kit with TypeScript, Jest, ESLint, Prettier, Husky, and more already configured.",
+  "type": "module",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "bin": {
+    "bido-node-package": "cmd/create-nodejs-ts/index.js"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Topazdom Technologies Limited",
+    "email": "developers@topazdom.com",
+    "url": "https://topazdom.com"
+  },
+  "contributors": [
+    {
+      "name": "David Nzagha",
+      "email": "nzaghad@topazdom.com",
+      "url": "https://nzaghadavid.com"
+    },
+    {
+      "name": "Vitor Hugo Salgado",
+      "email": "vsalgadopb@gmail.com",
+      "url": "https://github.com/vitorsalgado"
+    },
+    {
+      "name": "Ryan Sonshine",
+      "email": "ryansonshine@users.noreply.github.com",
+      "url": "https://github.com/ryansonshine"
+    }
+  ],
+  "scripts": {
+    "start": "node dist/main.js",
+    "start:dev": "nodemon --ext js,ts,json,env --exec 'node --experimental-specifier-resolution=node --loader ts-node/esm' src/main.ts",
+    "prepare": "husky",
+    "build": "tsc --project tsconfig.build.json",
+    "build:clean": "rm -rf tsconfig.build.tsbuildinfo && rm -rf ./dist",
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --detectOpenHandles",
+    "test:coverage": "npm run test -- --coverage",
+    "test:ci": "npm run test -- --colors --coverage --ci",
+    "lint": "eslint --ext .ts,.js .",
+    "format": "prettier \"./**\" --write --ignore-unknown",
+    "format:check": "prettier \"./**\" --ignore-unknown --check"
+  },
+  "repository": "git+https://github.com/topazdom/bido-nodejs-package-toolkit.git",
+  "bugs": {
+    "url": "https://github.com/topazdom/bido-nodejs-package-toolkit/issues"
+  },
+  "homepage": "https://github.com/topazdom/bido-nodejs-package-toolkit#readme",
+  "keywords": [
+    "nodejs",
+    "nodejs-boilerplate",
+    "typescript",
+    "typescript-boilerplate",
+    "starter",
+    "boilerplate",
+    "scaffold",
+    "template",
+    "jest",
+    "husky",
+    "semantic-release"
+  ],
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "fs-extra": "11.3.2",
+    "tslib": "^2.8.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "@jest/globals": "^30.2.0",
+    "@jest/types": "^30.2.0",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.10.1",
+    "@types/supertest": "^6.0.3",
+    "@typescript-eslint/eslint-plugin": "^8.47.0",
+    "@typescript-eslint/parser": "^8.47.0",
+    "cross-env": "^10.1.0",
+    "eslint": "^9.39.1",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-tsdoc": "^0.5.0",
+    "husky": "^9.1.7",
+    "jest": "^30.2.0",
+    "lint-staged": "^16.2.7",
+    "nodemon": "^3.1.11",
+    "prettier": "^3.6.2",
+    "supertest": "^7.1.4",
+    "ts-jest": "^29.4.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
