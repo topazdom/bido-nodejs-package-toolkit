@@ -78,7 +78,7 @@ Check this [docker-compose.yml](deployments/dev/docker-compose.yml) for more det
 
 ## License
 
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ftopazdom%2Fnodejs-boilerplate.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Ftopazdom%2Fnodejs-boilerplate?ref=badge_shield)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ftopazdom%2Fbido-nodejs-package-toolkit.svg?type=shield&issueType=license)](https://app.fossa.com/projects/git%2Bgithub.com%2Ftopazdom%2Fbido-nodejs-package-toolkit?ref=badge_shield&issueType=license)
 
 This project is [MIT Licensed](LICENSE).
 
@@ -156,6 +156,6 @@ Lorem ipsum.
 
 ## License
 
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ftopazdom%2Fnodejs-boilerplate.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Ftopazdom%2Fnodejs-boilerplate?ref=badge_shield)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ftopazdom%2Fbido-nodejs-package-toolkit.svg?type=shield&issueType=license)](https://app.fossa.com/projects/git%2Bgithub.com%2Ftopazdom%2Fbido-nodejs-package-toolkit?ref=badge_shield&issueType=license)
 
 This project is [MIT Licensed](LICENSE).
