@@ -4,7 +4,6 @@
     <i>Starter Project for a Node.js application using <strong>TypeScript</strong> with all boring stuff already configured.</i>
 </p>
 
-
 <p align="center">
   <a href="https://github.com/topazdom/bido-nodejs-package-toolkit/actions/workflows/ci.yml">
     <img src="https://github.com/topazdom/bido-nodejs-package-toolkit/actions/workflows/ci.yml/badge.svg" alt="GitHub Action Status" />
@@ -29,7 +28,6 @@
   </a>
 </p>
 
-
 ## Overview
 
 > Bido means Start in Igbo Language. With Love <3 from Biafra.
@@ -42,13 +40,13 @@ Use the following commands to bootstrap a new project:
 ### NPX
 
 ```
-npx bido-nodejs-package --no --app=your-app
+npx bido-nodejs-package-toolkit --app=your-app
 ```
 
 ### NPM Init
 
 ```
-npm init bido-nodejs-package -- --app=your-app
+npm init bido-nodejs-package-toolkit --app=your-app
 ```
 
 Without parameters, the project will be created on a folder **my-app** in the same directory where you executed the
@@ -88,7 +86,6 @@ Check this [docker-compose.yml](deployments/dev/docker-compose.yml) for more det
 - Prettier
 - Nodemon
 - Docker | Docker Compose
-
 
 ## Credits
 
