@@ -1,8 +1,8 @@
 import 'dotenv/config'
 
-import { createDefaultPreset } from "ts-jest";
+import { createDefaultPreset } from 'ts-jest'
 
-const tsJestTransformCfg = createDefaultPreset().transform;
+const tsJestTransformCfg = createDefaultPreset().transform
 
 const isCI = process.env.CI === 'true'
 
@@ -12,7 +12,7 @@ export default {
   collectCoverage: false,
   resetModules: true,
   restoreMocks: true,
-  testEnvironment: "node",
+  testEnvironment: 'node',
   testMatch: ['**/?(*.)+(spec|test).[jt]s?(x)'],
   moduleNameMapper: {
     '^(\\.\\.?\\/.+)\\.js$': '$1',
@@ -24,4 +24,4 @@ export default {
   coveragePathIgnorePatterns: ['<rootDir>/dist/', '/node_modules/', '<rootDir>/scripts', '<rootDir>/tools'],
   coverageProvider: 'v8',
   coverageReporters: isCI ? ['json'] : ['text'],
-};
+}
