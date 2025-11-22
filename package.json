@@ -1,6 +1,6 @@
 {
   "name": "bido-nodejs-package-toolkit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Bido NodeJS Package Toolkit is NodeJS Package Development Starter Kit with TypeScript, Jest, ESLint, Prettier, Husky, and more already configured.",
   "type": "module",
   "main": "dist/main.js",
