@@ -3,11 +3,10 @@
  * Replace this with your implementation.
  */
 
-import { spawn } from 'child_process'
+import Path from 'path'
 import SuperTest from 'supertest'
-import Path, { dirname } from 'path'
-import { fileURLToPath } from 'url'
 import main from './main.js'
+import { spawn } from 'child_process'
 
 describe('Example Test', function () {
   it('should GET / with 200 OK', function () {
@@ -22,8 +21,8 @@ describe('Example Test', function () {
   it('should init without errors', async function () {
     process.env.PORT = '0'
 
-    const dir = dirname(fileURLToPath(import.meta.url))
-    const index = Path.resolve(dir, 'index.ts')
+    const dir = Path.resolve(__dirname)
+    const index = Path.resolve(dir, 'main.ts')
     const tsNodeExe = process.platform === 'win32' ? './node_modules/.bin/ts-node.cmd' : './node_modules/.bin/ts-node'
     const proc = await spawn(tsNodeExe, [index])
 

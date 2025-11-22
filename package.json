@@ -37,7 +37,7 @@
     "prepare": "husky",
     "build": "tsc --project tsconfig.build.json",
     "build:clean": "rm -rf tsconfig.build.tsbuildinfo && rm -rf ./dist",
-    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --detectOpenHandles",
+    "test": "jest --detectOpenHandles",
     "test:coverage": "npm run test -- --coverage",
     "test:ci": "npm run test -- --colors --coverage --ci",
     "lint": "eslint .",

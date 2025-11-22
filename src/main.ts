@@ -10,11 +10,10 @@ import 'dotenv/config'
 import { IncomingMessage, ServerResponse, createServer } from 'http'
 
 import { Config } from './config.js'
-import { fileURLToPath } from 'url'
-import { resolve } from 'path'
+import Path from 'path'
 
-const nodePath = resolve(process.argv[1])
-const modulePath = resolve(fileURLToPath(import.meta.url))
+const nodePath = Path.resolve(process.argv[1])
+const modulePath = Path.resolve(__dirname)
 const isCLI = nodePath === modulePath
 
 export const myPackage = (taco = ''): string => `${taco} from my package`
