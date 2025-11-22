@@ -89,7 +89,7 @@ Check this [docker-compose.yml](deployments/dev/docker-compose.yml) for more det
 
 ## Credits
 
-This project is adapted from [Create Nodejs TS](https://github.com/vitorsalgado/create-nodejs-ts/tree/main) by [@vitorsalgado](https://github.com/vitorsalgado) and minor contributions from [typescript-npm-package-template](https://github.com/ryansonshine/typescript-npm-package-template) by [@ryansonshine](https://github.com/ryansonshine) and then updated to latest dependency versions and technical debts fixes by [@zaghadon](https://github.com/zaghadon) and Topazdom Technologies Limited. Thanks to all contributors.
+This project is adapted from [Create Nodejs TS](https://github.com/vitorsalgado/create-nodejs-ts/tree/main) by [@vitorsalgado](https://github.com/vitorsalgado) and minor contributions from [typescript-npm-package-template](https://github.com/ryansonshine/typescript-npm-package-template) by [@ryansonshine](https://github.com/ryansonshine) and then updated to latest dependency versions and technical debts fixes by [@zaghadon](https://github.com/zaghadon) and [Topazdom Technologies Limited](https://topazdom.com). Thanks to all contributors.
 
 ## License
 
