@@ -18,7 +18,6 @@ const FilesToIgnore = [
   '.git',
   '.idea',
   '.vscode',
-  '.github',
   '.husky/_',
   '.yarn',
   '.yarn/cache',
