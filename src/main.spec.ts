@@ -23,8 +23,9 @@ describe('Example Test', function () {
 
     const dir = Path.resolve(__dirname)
     const index = Path.resolve(dir, 'main.ts')
-    const tsNodeExe = process.platform === 'win32' ? './node_modules/.bin/ts-node.cmd' : './node_modules/.bin/ts-node'
-    const proc = await spawn(tsNodeExe, [index])
+    const tsNodeExe = process.platform === 'win32' ? 'ts-node' : './node_modules/.bin/ts-node'
+    const spawnOptions = process.platform === 'win32' ? { shell: true } : {}
+    const proc = spawn(tsNodeExe, [index], spawnOptions)
 
     expect(proc.pid).toBeDefined()
 
