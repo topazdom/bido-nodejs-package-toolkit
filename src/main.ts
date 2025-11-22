@@ -6,14 +6,18 @@
  */
 
 import 'dotenv/config'
-import { createServer, IncomingMessage, ServerResponse } from 'http'
-import { resolve } from 'path'
-import { fileURLToPath } from 'url'
+
+import { IncomingMessage, ServerResponse, createServer } from 'http'
+
 import { Config } from './config.js'
+import { fileURLToPath } from 'url'
+import { resolve } from 'path'
 
 const nodePath = resolve(process.argv[1])
 const modulePath = resolve(fileURLToPath(import.meta.url))
 const isCLI = nodePath === modulePath
+
+export const myPackage = (taco = ''): string => `${taco} from my package`;
 
 export default function main(port: number = Config.port) {
   const requestListener = (request: IncomingMessage, response: ServerResponse) => {
