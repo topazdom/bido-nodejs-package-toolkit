@@ -1,3 +1,9 @@
+## 1.1.0 (2025-11-22)
+
+* docs: correct package name in usage examples and remove unnecessary whitespace ([53df796](https://github.com/topazdom/bido-nodejs-package-toolkit/commit/53df796))
+* docs: update credits section to include link for Topazdom Technologies Limited ([b176eb2](https://github.com/topazdom/bido-nodejs-package-toolkit/commit/b176eb2))
+* feat: enhance project bootstrapping experience with ASCII art and improved console messages ([7cef4de](https://github.com/topazdom/bido-nodejs-package-toolkit/commit/7cef4de))
+
 ## <small>1.0.1 (2025-11-22)</small>
 
 * chore: add dependency on test job for release workflow ([9e36097](https://github.com/topazdom/bido-nodejs-package-toolkit/commit/9e36097))
