@@ -1,5 +1,6 @@
 {
   "name": "bido-nodejs-package-toolkit",
+  "version": "2.0.3",
   "description": "Bido NodeJS Package Toolkit is NodeJS Package Development Starter Kit with TypeScript, Jest, ESLint, Prettier, Husky, and more already configured.",
   "type": "module",
   "main": "dist/main.js",
@@ -41,9 +42,14 @@
     "test:ci": "npm run test -- --colors --coverage --ci",
     "lint": "eslint .",
     "format": "prettier \"./**\" --write --ignore-unknown",
-    "format:check": "prettier \"./**\" --ignore-unknown --check"
+    "format:check": "prettier \"./**\" --ignore-unknown --check",
+    "semantic-release": "semantic-release",
+    "semantic-release:dry": "semantic-release --dry-run"
   },
-  "repository": "git+https://github.com/topazdom/bido-nodejs-package-toolkit.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/topazdom/bido-nodejs-package-toolkit.git"
+  },
   "bugs": {
     "url": "https://github.com/topazdom/bido-nodejs-package-toolkit/issues"
   },
@@ -71,6 +77,11 @@
     "@commitlint/config-conventional": "^20.0.0",
     "@jest/globals": "^30.2.0",
     "@jest/types": "^30.2.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^12.0.2",
+    "@semantic-release/npm": "^13.1.2",
+    "@semantic-release/release-notes-generator": "^14.1.0",
     "@types/jest": "^30.0.0",
     "@types/node": "^24.10.1",
     "@types/supertest": "^6.0.3",
@@ -86,6 +97,7 @@
     "lint-staged": "^16.2.7",
     "nodemon": "^3.1.11",
     "prettier": "^3.6.2",
+    "semantic-release": "^25.0.2",
     "supertest": "^7.1.4",
     "ts-jest": "^29.4.5",
     "ts-node": "^10.9.2",

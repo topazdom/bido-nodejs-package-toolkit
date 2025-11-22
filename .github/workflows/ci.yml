@@ -6,8 +6,6 @@ on:
     branches:
       - main
       - '[0-9]+.x'
-    tags:
-      - '*'
     paths-ignore:
       - 'docs/**'
       - '*.md'
@@ -18,7 +16,9 @@ on:
 
 permissions:
   id-token: write  # Required for OIDC
-  contents: read
+  contents: write  # Required for semantic-release to push tags and commits
+  issues: write    # Required for semantic-release to create releases
+  pull-requests: write
 jobs:
   test:
     name: Node ${{ matrix.node_version }} - On ${{ matrix.os }}
@@ -66,38 +66,36 @@ jobs:
 
   release:
     runs-on: ubuntu-latest
-    if: startsWith(github.ref, 'refs/tags/v')
+    if: github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/heads/') && endsWith(github.ref, '.x')
     needs:
       - test
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          persist-credentials: false
 
       - name: Use Node
         id: setup-node
         uses: actions/setup-node@v6.0.0
         with:
           node-version: lts/*
-          registry-url: 'https://registry.npmjs.org'
+          cache: 'npm'
 
       - name: Deps
         run: |
           npm ci
 
-      - name: Publish
-        run: |
-          npm publish --access public
-
       - name: Release
-        uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          body_path: CHANGELOG.md
-          draft: false
-          prerelease: contains(github.ref, '-')
+          GIT_AUTHOR_NAME: semantic-release-bot
+          GIT_AUTHOR_EMAIL: semantic-release-bot@github.com
+          GIT_COMMITTER_NAME: semantic-release-bot
+          GIT_COMMITTER_EMAIL: semantic-release-bot@github.com
+        run: |
+          npx semantic-release
 
 
   automerge:
