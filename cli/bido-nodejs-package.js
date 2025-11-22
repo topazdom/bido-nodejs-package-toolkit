@@ -55,8 +55,18 @@ const Templates = [
 
 const PkgFieldsToKeep = ['type', 'main', 'types', 'scripts', 'dependencies', 'devDependencies']
 
+const bidoAscii = `
+  ____  _     _       
+ |  _ \\(_)   | |      
+ | |_) |_  __| | ___  
+ |  _ <| |/ _\` |/ _ \\ 
+ | |_) | | (_| | (_) |
+ |____/|_|\\__,_|\\___/ 
+`
+
 function main() {
-  console.log('NodeJS Starter Kit - Bootstrapping New Project')
+  console.log('\x1b[36m%s\x1b[0m', bidoAscii)
+  console.log('\x1b[33m%s\x1b[0m', 'NodeJS Package Toolkit - Bootstrapping New Project\n')
 
   const argv = process.argv.slice(2)
   const args = new Map()
@@ -80,28 +90,25 @@ function main() {
 
   const source = makePath(__dirname, '..')
   const dest = paramOr(args, 'destination', process.cwd()).trim()
-  const app = paramOr(args, 'name', 'my-app').trim()
+  const app = paramOr(args, 'app', 'my-app').trim()
   const destination = makePath(dest, app)
 
-  console.log(
-    `
-Summary:
-Destination: ${destination}
-App: ${app}
-`,
-  )
+  console.log('\x1b[33m%s\x1b[0m', '📋 Summary:')
+  console.log('   Destination: \x1b[32m%s\x1b[0m', destination)
+  console.log('   App Name: \x1b[32m%s\x1b[0m', app)
+  console.log('')
 
-  console.log('Copying Project Files ...')
+  console.log('\x1b[34m%s\x1b[0m', '📂 Copying Project Files ...')
 
   FsExt.copySync(source, destination, { filter: ignoreContent(...FilesToIgnore.map(x => makePath(source, x))) })
 
-  console.log('Copying Templates ...')
+  console.log('\x1b[34m%s\x1b[0m', '📄 Copying Templates ...')
 
   for (const x of Templates) {
     FsExt.copySync(makePath(source, 'templates', x.file), makePath(destination, x.copyTo))
   }
 
-  console.log('Preparing package.json ...')
+  console.log('\x1b[34m%s\x1b[0m', '📦 Preparing package.json ...')
 
   const pkg = FsExt.readJsonSync(makePath(source, 'package.json'))
   const newPkg = {
@@ -128,7 +135,11 @@ App: ${app}
 
   FsExt.writeJsonSync(makePath(destination, 'package.json'), newPkg, { spaces: 2 })
 
-  console.log('\nDone!')
+  console.log('\n\x1b[32m%s\x1b[0m', '✅ Done! Your project is ready.')
+  console.log('\x1b[36m%s\x1b[0m', '\nNext steps:')
+  console.log('   cd ' + app)
+  console.log('   npm install')
+  console.log('   npm run start:dev\n')
 
   return Promise.resolve()
 }
