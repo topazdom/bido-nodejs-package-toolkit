@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
-import FsExt from 'fs-extra'
 import Path, { dirname } from 'path'
+
+import FsExt from 'fs-extra'
 import { fileURLToPath } from 'url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -36,10 +37,7 @@ const FilesToIgnore = [
   '.codeclimate.yml',
   '.npmignore',
   '.env',
-  'CONTRIBUTING.md',
   'CHANGELOG.md',
-  'CODE_OF_CONDUCT.md',
-  'LICENSE',
   'README.md',
   'package.json',
   'package-lock.json',
@@ -51,7 +49,6 @@ const DepsToIgnore = ['fs-extra', '@types/fs-extra', 'standard-release']
 
 const Templates = [
   { file: 'ci.yml', copyTo: '.github/workflows/ci.yml' },
-  { file: 'README.md', copyTo: 'README.md' },
   { file: '.gitignore.husky', copyTo: '.husky/.gitignore' },
   { file: '.gitignore.root', copyTo: '.gitignore' },
   { file: '.dockerignore.root', copyTo: '.dockerignore' },
@@ -82,7 +79,7 @@ function main() {
     }
   }
 
-  const source = makePath(__dirname, '../..')
+  const source = makePath(__dirname, '..')
   const dest = paramOr(args, 'destination', process.cwd()).trim()
   const app = paramOr(args, 'name', 'my-app').trim()
   const destination = makePath(dest, app)
