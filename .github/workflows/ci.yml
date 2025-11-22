@@ -65,6 +65,8 @@ jobs:
           fail_ci_if_error: false
 
   release:
+    needs:
+      - test
     name: Release
     runs-on: ubuntu-latest
     permissions:
