@@ -31,13 +31,13 @@ Use the following commands to bootstrap a new project:
 ### NPX
 
 ```
-npx bido-node-package --no --app=your-app
+npx bido-nodejs-package --no --app=your-app
 ```
 
 ### NPM Init
 
 ```
-npm init nodejs-ts -- --app=your-app
+npm init bido-nodejs-package -- --app=your-app
 ```
 
 Without parameters, the project will be created on a folder **my-app** in the same directory where you executed the
@@ -77,6 +77,11 @@ Check this [docker-compose.yml](deployments/dev/docker-compose.yml) for more det
 - Prettier
 - Nodemon
 - Docker | Docker Compose
+
+
+## Credits
+
+This project is adapted from [Create Nodejs TS](https://github.com/vitorsalgado/create-nodejs-ts/tree/main) by @vitorsalgado and minor contributions from [typescript-npm-package-template](https://github.com/ryansonshine/typescript-npm-package-template) by @ryansonshine and then updated to latest dependency versions and technical debts fixes by @zaghadon and Topazdom Technologies Limited. Thanks to all contributors.
 
 ## License
 
