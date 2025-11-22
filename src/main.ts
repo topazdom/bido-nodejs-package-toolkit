@@ -17,7 +17,7 @@ const nodePath = resolve(process.argv[1])
 const modulePath = resolve(fileURLToPath(import.meta.url))
 const isCLI = nodePath === modulePath
 
-export const myPackage = (taco = ''): string => `${taco} from my package`;
+export const myPackage = (taco = ''): string => `${taco} from my package`
 
 export default function main(port: number = Config.port) {
   const requestListener = (request: IncomingMessage, response: ServerResponse) => {
