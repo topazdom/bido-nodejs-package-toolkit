@@ -1,8 +1,8 @@
-import eslint from '@eslint/js';
-import importPlugin from 'eslint-plugin-import';
-import tsdocPlugin from 'eslint-plugin-tsdoc';
-import tseslint from '@typescript-eslint/eslint-plugin';
-import tsparser from '@typescript-eslint/parser';
+import eslint from '@eslint/js'
+import importPlugin from 'eslint-plugin-import'
+import tsdocPlugin from 'eslint-plugin-tsdoc'
+import tseslint from '@typescript-eslint/eslint-plugin'
+import tsparser from '@typescript-eslint/parser'
 
 export default [
   {
@@ -62,4 +62,4 @@ export default [
       ],
     },
   },
-];
+]
