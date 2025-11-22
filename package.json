@@ -6,7 +6,7 @@
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
   "bin": {
-    "bido-node-package": "cli/bido-nodejs-package.js"
+    "bido-nodejs-package": "cli/bido-nodejs-package.js"
   },
   "license": "MIT",
   "author": {
