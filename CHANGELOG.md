@@ -1,3 +1,12 @@
+## <small>1.1.1 (2025-11-24)</small>
+
+* fix: reverse GitHub token for release process and re-add automerge job ([4bc8d67](https://github.com/topazdom/bido-nodejs-package-toolkit/commit/4bc8d67))
+* fix: update bin entry to include full package name for CLI ([6aab627](https://github.com/topazdom/bido-nodejs-package-toolkit/commit/6aab627))
+* fix: update CI configuration for improved release process and dependency management ([0e10ced](https://github.com/topazdom/bido-nodejs-package-toolkit/commit/0e10ced))
+* fix: update GitHub token for release process and remove automerge job ([686bfb5](https://github.com/topazdom/bido-nodejs-package-toolkit/commit/686bfb5))
+* docs: enhance installation instructions for global usage of the toolkit ([1ff244f](https://github.com/topazdom/bido-nodejs-package-toolkit/commit/1ff244f))
+* docs: update overview section with emoji and add new screenshots ([b274c28](https://github.com/topazdom/bido-nodejs-package-toolkit/commit/b274c28))
+
 ## 1.1.0 (2025-11-22)
 
 * docs: correct package name in usage examples and remove unnecessary whitespace ([53df796](https://github.com/topazdom/bido-nodejs-package-toolkit/commit/53df796))
