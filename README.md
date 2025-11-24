@@ -41,14 +41,28 @@ Use the following commands to bootstrap a new project:
 
 ### NPX
 
-```
+```npm
 npx bido-nodejs-package-toolkit --app=your-app
 ```
 
 ### NPM Init
 
-```
+```npm
 npm init bido-nodejs-package-toolkit --app=your-app
+```
+
+### Bido Global Installation
+
+Fisrtly, Install the Toolkit Globally and then simply run the CLI command whenever you want to start a new project.
+
+```npm
+npm -g i bido-nodejs-package-toolkit
+```
+
+then,
+
+```shell
+bido --app=your-app 
 ```
 
 Without parameters, the project will be created on a folder **my-app** in the same directory where you executed the
