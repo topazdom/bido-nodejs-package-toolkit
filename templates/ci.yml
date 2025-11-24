@@ -30,7 +30,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Use Node
         id: setup-node
@@ -38,13 +38,6 @@ jobs:
         with:
           node-version: lts/*
           cache: 'npm'
-
-      - uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
 
       - name: Deps
         run: |
@@ -72,46 +65,34 @@ jobs:
           fail_ci_if_error: false
 
   release:
-    runs-on: ubuntu-latest
-    if: startsWith(github.ref, 'refs/tags/v')
     needs:
       - test
+    name: Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # to be able to publish a GitHub release
+      issues: write # to be able to comment on released issues
+      pull-requests: write # to be able to comment on released pull requests
+      id-token: write # to enable use of OIDC for trusted publishing and npm provenance
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Use Node
-        id: setup-node
-        uses: actions/setup-node@v6.0.0
         with:
-          node-version: lts/*
-          registry-url: 'https://registry.npmjs.org'
-
-      - uses: actions/cache@v4
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - name: Deps
-        run: |
-          npm ci
-
-      - name: Publish
-        run: |
-          npm publish --access public
-
+          node-version: "lts/*"
+      - name: Install dependencies
+        run: npm clean-install
+      - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
+        run: npm audit signatures
       - name: Release
-        uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          body_path: CHANGELOG.md
-          draft: false
-          prerelease: contains(github.ref, '-')
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx --package semantic-release --package @semantic-release/changelog --package @semantic-release/git --package @semantic-release/github --package @semantic-release/npm --package @semantic-release/release-notes-generator semantic-release
+
 
 
   automerge:
