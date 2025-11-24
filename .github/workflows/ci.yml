@@ -89,6 +89,20 @@ jobs:
         run: npm audit signatures
       - name: Release
         env:
-          GITHUB_TOKEN: ${{ secrets.BIDO_DEPLOYER_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx --package semantic-release --package @semantic-release/changelog --package @semantic-release/git --package @semantic-release/github --package @semantic-release/npm --package @semantic-release/release-notes-generator semantic-release
+
+
+
+  automerge:
+    needs:
+      - test
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: write
+    steps:
+      - uses: fastify/github-action-merge-dependabot@v3.11.2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
