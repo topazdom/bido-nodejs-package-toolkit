@@ -30,7 +30,9 @@
 
 ## Overview
 
-> Bido means Start in Igbo Language. With Love <3 from Biafra.
+> Bido means Start in Igbo Language. With Love ❤️ from Biafra.
+
+![Bido In Action](image/screenshot.png)
 
 Starter project for **Node.js** applications using **TypeScript** with test, lint, code formatter already configured.
 Check the [tooling](#tooling) section for more details.
